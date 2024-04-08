@@ -1,0 +1,19 @@
+
+.form-group{
+    justify-content: space-around;
+    padding-bottom: 30px;
+}
+
+.contenedorRegistro{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+
+    padding-top: 50px;
+    padding-left: 300px;
+    padding-right: 300px;
+    font-size: 1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: aquamarine;
+}
