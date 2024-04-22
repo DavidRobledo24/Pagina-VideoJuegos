@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
-//import Swal from 'sweetalert2'
+import Swal from 'sweetalert2'
 import "./registro.css"
+import { VerticalSplitOutlined } from '@mui/icons-material'
 
 
 export default function Registro() {
@@ -72,7 +73,7 @@ export default function Registro() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    let validPassword = /^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&*-]).{8,}$/
+    let validPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
     let validEmail = /^\w+([.-_+]?\w+)@\w+([.-]?\w+)(\.\w{2,10})+$/;
 
     if (values.identificacion.length < 5 || values.identificacion.length > 10 || values.identificacion.length === 0) {
@@ -111,6 +112,9 @@ export default function Registro() {
     else if (!validPassword.test(values.password)) {
       setPasswordError(true)
       return
+    /*else if(values.password.length > 7 && values.password.match(valMay) && values.password.match(valMin) && values.password.match(valNum) && values.password.match(valEsp)){
+      setPasswordError(true)
+    }*/
     }
     else if (values.passRepeat.length === 0) {
       setPasswordErrorRepeat(true)
@@ -121,7 +125,7 @@ export default function Registro() {
       return
     }
 
-
+    console.log(JSON.stringify(values));
      fetch('http://localhost:3001/registro-usuario', {
        method: 'POST',
        headers: { "Content-Type": "application/json", 'Accept': 'application/json' },
@@ -159,9 +163,9 @@ export default function Registro() {
 
   return (
     <div className='contenedorRegistro'>
-      <h1> Registro </h1>
       <form onSubmit={handleSubmit} ref={form}>
         <div class="form-group">
+          <h1 > Registro </h1>
           <label for="identificacion">Identificacion</label>
           <input type="number" className="form-control" id="inputIdentificacion" name='identificacion' onChange={handleChange} placeholder="Debe estar entre 5 y 10 digitos" onClick={idError} />
           {identificacionError ? <p>La identificación debe estar entre 5 y diez números</p> : ""}

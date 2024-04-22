@@ -1,3 +1,41 @@
 [
-    
+    {
+        "id": 1,
+        "nombres": "david2",
+        "apellidos": "robledo",
+        "email": "david123@gmail.com",
+        "direccion": "mz 21 cs 27 poblado 2",
+        "telefono": "3217254256",
+        "fechaNacimiento": "2000-01-24",
+        "password": "David24pro",
+        "estado": "Activo",
+        "rol": "Usuario",
+        "fechaCreacion": "2024-04-22T18:48:09.856Z"
+    },
+    {
+        "id": 2,
+        "nombres": "david",
+        "apellidos": "robledo",
+        "email": "david1234@gmail.com",
+        "direccion": "mz 21 cs 27 poblado 2",
+        "telefono": "3132456321",
+        "fechaNacimiento": "2000-01-24",
+        "password": "David24pro",
+        "estado": "Activo",
+        "rol": "Usuario",
+        "fechaCreacion": "2024-04-22T18:55:04.339Z"
+    },
+    {
+        "id": 3,
+        "nombres": "David Alejandro",
+        "apellidos": "robledo",
+        "email": "ola@gmail.com",
+        "direccion": "wgwrq2rgerhsehawf",
+        "telefono": "0192837465",
+        "fechaNacimiento": "2024-04-03",
+        "password": "Contrasena1",
+        "estado": "Activo",
+        "rol": "Usuario",
+        "fechaCreacion": "2024-04-22T19:24:39.760Z"
+    }
 ]

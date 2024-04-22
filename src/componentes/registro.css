@@ -1,23 +1,27 @@
-
-.form-group{
-    justify-content: space-around;
-    padding-bottom: 30px;
-}
-
 .contenedorRegistro{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: auto;
-
-    padding-top: 50px;
-    padding-left: 300px;
-    padding-right: 300px;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 1.5rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: aquamarine;
+    display: flex;
+    justify-content:center;
+    max-width: 80%;
+    margin: auto;
+    padding: 100px;
+}
+form{
+    border: 5px solid black;
+    border-radius: 10px;
+    background-color: beige;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
+}
+button{
+    border-radius: 5px;
+    background-color: rgba(20, 149, 247, 0.837);
 }
 
 p{
-    color: brown;
+    color: red;
 }
