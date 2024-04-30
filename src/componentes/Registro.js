@@ -163,56 +163,56 @@ export default function Registro() {
 
   return (
     <div className='contenedorRegistro'>
-      <form onSubmit={handleSubmit} ref={form}>
+      <form className='forma' onSubmit={handleSubmit} ref={form}>
         <div class="form-group">
           <h1 > Registro </h1>
           <label for="identificacion">Identificacion</label>
           <input type="number" className="form-control" id="inputIdentificacion" name='identificacion' onChange={handleChange} placeholder="Debe estar entre 5 y 10 digitos" onClick={idError} />
-          {identificacionError ? <p>La identificación debe estar entre 5 y diez números</p> : ""}
+          {identificacionError ? <p className='p-error'>La identificación debe estar entre 5 y diez números</p> : ""}
 
         </div>
         <div class="form-group">
           <label for="nombre">Nombre</label>
           <input type="text" class="form-control" id="inputNombre" name='nombres' onChange={handleChange} placeholder="Debe ser de minimo tres caracteres" onClick={nombreError} />
-          {nomError ? <p>El nombre debe contener mínimo 3 caracteres</p> : ""}
+          {nomError ? <p className='p-error'>El nombre debe contener mínimo 3 caracteres</p> : ""}
         </div>
         <div class="form-group">
           <label for="nombre">Apellido</label>
           <input type="text" class="form-control" id="inputApellido" name='apellidos' onChange={handleChange} placeholder="Debe ser de minimo tres caracteres" onClick={apelliError} />
-          {apellidoError ? <p>El apellido debe contener mínimo 3 caracteres</p> : ""}
+          {apellidoError ? <p className='p-error'>El apellido debe contener mínimo 3 caracteres</p> : ""}
         </div>
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" class="form-control" id="InputEmail" name='email' onChange={handleChange} aria-describedby="emailHelp" placeholder="Debe ser un formato valido. Ejemplo: alguien@gmail.com" onClick={errorEmail} />
           {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
-          {emailError ? <p>El email debe tener la estructura de una dirección de correo electrónico. Verbigracia: alguien@gmail.com</p> : ""}
-          {emailErrorVacio ? <p>Debe introducir una dirección de correo electrónico.</p> : ""}
+          {emailError ? <p className='p-error'>El email debe tener la estructura de una dirección de correo electrónico. Verbigracia: alguien@gmail.com</p> : ""}
+          {emailErrorVacio ? <p className='p-error'>Debe introducir una dirección de correo electrónico.</p> : ""}
         </div>
         <div class="form-group">
           <label for="direccion">Direccion</label>
           <input type="text" class="form-control" id="inputDireccion" name='direccion' onChange={handleChange} placeholder="Debe ser de minimo quince caracteres" onClick={dirError} />
-          {direccionError ? <p>La dirección debe contener mínimo 15 caracteres</p> : ""}
+          {direccionError ? <p className='p-error'>La dirección debe contener mínimo 15 caracteres</p> : ""}
         </div>
         <div class="form-group">
           <label for="telefono">Telefono</label>
           <input type="number" class="form-control" id="inputTelefono" name='telefono' onChange={handleChange} placeholder="Debe ser de diez numeros" onClick={telError} />
-          {telefonoError ? <p>El teléfono debe ser de 10 números</p> : ""}
+          {telefonoError ? <p className='p-error'>El teléfono debe ser de 10 números</p> : ""}
         </div>
         <div class="form-group">
           <label for="fecha">Fecha</label>
           <input type="date" class="form-control" id="inputFecha" name='fechaNacimiento' onChange={handleChange} placeholder="MM/DD/YYYY" onClick={fechaNacimientoErrorFuncion} />
-          {fechaNacimientoError ? <p>Debe introducir una fecha de nacimiento</p> : ""}
+          {fechaNacimientoError ? <p className='p-error'>Debe introducir una fecha de nacimiento</p> : ""}
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
           <input type="password" class="form-control" id="exampleInputPassword1" name='password' onChange={handleChange} placeholder="Password" onClick={passError} />
-          {passwordError ? <p>La contraseña no cumple con los requisitos mínimos solicitados(Mínimo 8 caracteres de longitud. Almenos una letra mayúscula. Almenos una letra minúscula. Almenos un número. Almenos un caracter especial).</p> : ""}
+          {passwordError ? <p className='p-error'>La contraseña no cumple con los requisitos mínimos solicitados(Mínimo 8 caracteres de longitud. Almenos una letra mayúscula. Almenos una letra minúscula. Almenos un número. Almenos un caracter especial).</p> : ""}
         </div>
         <div class="form-group">
           <label for="password2">Repeat your password</label>
           <input type="password" class="form-control" id="inputPassword2" name='passRepeat' onChange={handleChange} placeholder="Password" onClick={passRepeat} />
-          {passComparacion ? <p>Las contraseñas ingresadas no coinciden</p> : ""}
-          {passwordErrorRepeat ? <p>Este campo no puede quedar vacío.</p> : ""}
+          {passComparacion ? <p className='p-error'>Las contraseñas ingresadas no coinciden</p> : ""}
+          {passwordErrorRepeat ? <p className='p-error'>Este campo no puede quedar vacío.</p> : ""}
         </div>
         {/* <div class="form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1" />
