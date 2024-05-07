@@ -62,46 +62,43 @@ const Login = () => {
             return
         }
 
-        fetch('http://localhost:3001/login', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json", 'Accept': 'application/json' },
-            body: JSON.stringify(values)
-        })
-
-            .then(response => {
-                if (response.status === 200 && values.rol === "Usuario") {
-                    cookies.set('email', values.email, {
-                        secure: true,
-                        sameSite: 'None',
-                        path: '/'
-                    })
-                    window.location.hash = '/sesion'
-                }
-                else if (response.status === 200 && values.rol === "Administrador") {
-                    cookies.set('email', values.email, {
-                        secure: true,
-                        sameSite: 'None',
-                        path: '/'
-                    })
-                    window.location.hash = '/usuarios-registrados'
-                }
-
-                else {
-                    console.log("sdfd", response.status)
-                    Swal.fire({
-                        tittle: "Las credenciales ingresadas no son correctas",
-                        icon: "error"
-                    })
-                    window.location.hash = '/login'
-                }
+        fetch("http://localhost:3001/login", {
+                method: 'POST',
+                headers: { "Content-Type": "Application/json", 'Accept': 'application/json' },
+                body: JSON.stringify(values)
             })
-
-            .catch(() => Swal.fire({
-                tittle: "No se puede iniciar sesion por un problema en el servidor",
-                icon: "error"
-            }),
-                window.location.hash = '/login'
-            )
+                .then(Response => Response.json())
+                .then(res=>{
+                    console.log("res--> ", res)
+                    if(res.title === "error"){
+                        Swal.fire({
+                            title: "Las credenciales son incorrectas",
+                            icon: "Error"
+                        })  
+                        window.location.hash = '/login'
+                        return
+                    }
+                    else{
+                        cookies.set('email', res.email,{
+                            secure: true,
+                            sameSite: 'None',
+                            path: "/"
+                        })
+                        cookies.set('nombres', res.nombres,{
+                            secure: true,
+                            sameSite: 'None',
+                            path: "/"
+                        })
+                        cookies.set('apellidos', res.apellidos,{
+                            secure: true,
+                            sameSite: 'None',
+                            path: "/"
+                        })
+                        if(values.rol === "Usuario"){
+                            window.location.hash = '/sesion'
+                        }
+                    }
+                })
     }
 
 

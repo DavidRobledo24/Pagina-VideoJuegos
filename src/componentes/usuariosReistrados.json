@@ -37,5 +37,18 @@
         "estado": "Activo",
         "rol": "Usuario",
         "fechaCreacion": "2024-04-22T19:24:39.760Z"
+    },
+    {
+        "id": 4,
+        "nombres": "fulanito",
+        "apellidos": "detal",
+        "email": "fulanitodetal@gmail.com",
+        "direccion": "cs busquela cll encuentrela24",
+        "telefono": "1234567890",
+        "fechaNacimiento": "2024-04-11",
+        "password": "David24pro",
+        "estado": "Activo",
+        "rol": "Usuario",
+        "fechaCreacion": "2024-04-30T21:08:06.122Z"
     }
 ]

@@ -11,6 +11,8 @@ function Header2() {
 
     const cookie = new Cookie();
     const email = cookie.get('email');
+    const nombres = cookie.get('nombres');
+    const apellidos = cookie.get('apellidos');
 
     return (
         <div className="contenedor">
@@ -38,8 +40,9 @@ function Header2() {
                             </li>
                             </Link>
                         </ul>
+                            <p><h4>Bienvenudo</h4> <br/>{nombres}<br/>{apellidos}<br/>{email}</p>
                         <form className="d-flex" role="search">
-                            <p>Bienvenido {email}</p>
+                            
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-outline-success" type="submit">Search</button>
                         </form>

@@ -3,6 +3,7 @@ import CardList from './body/CardList';
 import Footer from './footer/Footer';
 import Carrusel from './carrusel/Carrusel';
 import Header2 from './header/Header2';
+import SesionExpired from './sesionExpired/SesionExpired';
 
 function Inicio2() {
   return (
@@ -11,6 +12,7 @@ function Inicio2() {
       <Carrusel/>
       <CardList/>
       <Footer/>
+      <SesionExpired/>
     </div>
   )
 }

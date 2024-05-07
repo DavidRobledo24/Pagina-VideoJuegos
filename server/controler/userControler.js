@@ -44,10 +44,11 @@ const controller ={
         }
     },
 
+
     login: async function (req, res){
         try{
-            const userData = await fs.readFile(userFilePath, "utf-8");
-            const users = JSON.parse(userData);
+            const usersData = await fs.readFile(userFilePath, "utf-8");
+            const users = JSON.parse(usersData);
 
             for(x of users){
                 if(
@@ -55,16 +56,41 @@ const controller ={
                     x.password === req.body.password &&
                     x.rol === req.body.rol 
                 ){
-                    res.status(200).send("OK");
-                    return;
+                   return res.json({
+                    nombres: x.nombres,
+                    apellidos: x.apellidos,
+                    email: x.email,
+                   });
                 }
             }
-            res.status(400).send("Error");
+            res.json({title:"error"});
         } catch (Error){
-            console.error("Error al procesar el registro:", error);
+            console.Error("Error al procesar el registro:", Error);
             res.status(500).send("Error interno del servidor");
         }
     },
+
+    // login: async function (req, res){
+    //     try{
+    //         const userData = await fs.readFile(userFilePath, "utf-8");
+    //         const users = JSON.parse(userData);
+
+    //         for(x of users){
+    //             if(
+    //                 x.email === req.body.email &&
+    //                 x.password === req.body.password &&
+    //                 x.rol === req.body.rol 
+    //             ){
+    //                 res.status(200).send("OK");
+    //                 return;
+    //             }
+    //         }
+    //         res.status(400).send("Error");
+    //     } catch (Error){
+    //         console.error("Error al procesar el registro:", error);
+    //         res.status(500).send("Error interno del servidor");
+    //     }
+    // },
 };
 
 module.exports = controller;
