@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import FireBaseAuth from '@mui/icons-material/GitHub';
-import GoogleOAuth from '@mui/icons-material/Google';
+
 import Swal from 'sweetalert2';
 import Cookies from 'universal-cookie'
 import Footer from './footer/Footer';
 import { AlternateEmail } from '@mui/icons-material';
 import PasswordIcon  from '@mui/icons-material/Password';
 import GroupIcon from '@mui/icons-material/Group';
+import GoogleOAuth from './googleOAuth/GoogleOAuth';
+
+
 
 const Login = () => {
     const cookies = new Cookies()

@@ -9,9 +9,11 @@ function SesionExpired() {
     const cookies = new Cookies()
 
     const onIdle= ()=> {
-        cookies.remove('email', 'nombres', 'apellidos', {path: "/"})
-        window.location.hash = '/login'
-        Swal.fire({
+      cookies.remove('email', {path: "/"})
+      cookies.remove('nombres', {path: "/"})
+      cookies.remove('apellidos', {path: "/"})
+      window.location.hash = '/login'
+      Swal.fire({
             title : "La sesion expiro por inactividad. Inicie sesion nuevamente",
             icon: "info"
         })
