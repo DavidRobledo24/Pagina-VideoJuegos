@@ -3,7 +3,7 @@ import { useIdleTimer } from 'react-idle-timer';
 import Swal from 'sweetalert2';
 import Cookies from 'universal-cookie';
 
-const timeout = 10000;
+const timeout = 30000;
 
 function SesionExpired() {
     const cookies = new Cookies()
