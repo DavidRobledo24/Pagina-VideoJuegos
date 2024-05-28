@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 import Swal from 'sweetalert2'
 import "./registro.css"
-import { VerticalSplitOutlined } from '@mui/icons-material'
 
 
 export default function Registro() {
@@ -133,6 +132,7 @@ export default function Registro() {
     //    headers: { "Content-Type": "application/json", 'Accept': 'application/json' },
     //    body: JSON.stringify(values)
     //  })
+
     console.log("URL -------> "+URL)
     fetch(`${URL}/registro-usuario`,{
       method: 'POST',
