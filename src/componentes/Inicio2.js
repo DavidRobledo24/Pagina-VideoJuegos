@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+// import React, { useEffect } from 'react'
 import CardList from './body/CardList';
 import Footer from './footer/Footer';
 import Carrusel from './carrusel/Carrusel';
